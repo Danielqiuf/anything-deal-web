@@ -1,13 +1,19 @@
 <template>
     <div class="buttonWrapper">
-        <Button class="vButton" :type="type" :color="color" :plain="plain" :hairline="hairline" @click="emits('click')">
+        <van-button
+            class="vButton"
+            :type="type"
+            :color="color"
+            :plain="plain"
+            :hairline="hairline"
+            @click="emits('click')"
+        >
             {{ title }}
-        </Button>
+        </van-button>
     </div>
 </template>
 <script setup>
 import { computed, toRefs } from 'vue'
-import { Button } from 'vant'
 import { primaryColor } from '@/constant/theme'
 import utils from '@/utils'
 

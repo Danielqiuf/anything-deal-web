@@ -2,6 +2,8 @@ const { defineConfig } = require('@vue/cli-service')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { VantResolver } = require('unplugin-vue-components/resolvers')
+const ComponentsPlugin = require('unplugin-vue-components/webpack')
 
 module.exports = defineConfig({
     transpileDependencies: true,
@@ -31,6 +33,11 @@ module.exports = defineConfig({
             /** 别把这2个库当作ES模块解析了，它们可能时AMD/CommentJS规范的版本？ */
             noParse: /^(lodash|moment)$/,
         },
+        plugins: [
+            ComponentsPlugin({
+                resolvers: [VantResolver()],
+            }),
+        ],
     },
     chainWebpack(config) {
         if (process.env.NODE_ENV === 'production') {

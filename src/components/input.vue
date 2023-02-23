@@ -1,5 +1,5 @@
 <template>
-    <Field
+    <van-field
         v-model="value"
         :type="inputType"
         class="field"
@@ -7,11 +7,10 @@
         :placeholder="placeholder"
         v-bind="{ ...(textareaProps || {}) }"
     >
-        <template #right-icon> <Icon v-if="value" name="clear" class="close-icon" @click="value = ''" /> </template>
-    </Field>
+        <template #right-icon> <van-icon v-if="value" name="clear" class="close-icon" @click="value = ''" /> </template>
+    </van-field>
 </template>
 <script setup>
-import { Field, Icon } from 'vant'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { labelColor } from '@/constant/theme'
 import utils from '@/utils'

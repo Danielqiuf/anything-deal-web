@@ -9,14 +9,14 @@
         </div>
         <Phone />
         <div style="overflow: hidden">
-            <Tabs v-model:active="serviceIndex" animated class="tab-v">
-                <Tab v-for="(item, index) in serviceTabList" :key="index">
+            <van-tabs v-model:active="serviceIndex" animated class="tab-v">
+                <van-tab v-for="(item, index) in serviceTabList" :key="index">
                     <template #title>
                         <img :src="serviceIndex === index ? item.selectedIcon : item.icon" class="serviceImg" />
                         {{ item.label }}
                     </template>
-                </Tab>
-            </Tabs>
+                </van-tab>
+            </van-tabs>
         </div>
         <div class="itemWrapper">
             <Item v-for="item in dataList" :key="item.id" :item="item" @click="alert = true" />
@@ -29,7 +29,6 @@
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Tabs, Tab } from 'vant'
 import { useServiceTabData } from '@/hooks/init'
 import AlertContent from './widget/alert-content'
 import Phone from './widget/phone'

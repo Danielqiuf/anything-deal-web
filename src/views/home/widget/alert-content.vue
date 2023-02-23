@@ -77,6 +77,8 @@ import utils from '@/utils'
 import { subColor, primaryColor, disabledColor } from '@/constant/theme'
 import { showToast } from 'vant'
 import { ref, computed, useAttrs, toRefs } from 'vue'
+import 'vant/es/toast/style'
+
 const desc = ref('广东移动活动流量【验证码】10G7天')
 const attrs = useAttrs()
 

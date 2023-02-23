@@ -20,6 +20,7 @@
 - 对于低版本手机或浏览器已加入`autoprefixer`和`babel/polyfill`插件进行兼容处理
 - 详细浏览器与前缀方案`browserslist`配置见`package.json`
 - 对vue3的使用有着更好的规范定义
+- 实现Vant按需引入机制，build后的代码体积变小
 
 ### 🔥 目录结构
 1. assets: `静态资源与样式目录`

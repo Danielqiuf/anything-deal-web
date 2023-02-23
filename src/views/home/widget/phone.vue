@@ -2,7 +2,7 @@
     <div class="phoneContainer">
         <div class="phoneInner">
             <img :src="require('@/assets/images/phone.png')" class="phoneImg" />
-            <Field v-model="phoneNumber" type="digit" class="field" placeholder="填写手机号码" @click="clear">
+            <van-field v-model="phoneNumber" type="digit" class="field" placeholder="填写手机号码" @click="clear">
                 <template #right-icon>
                     <img
                         v-if="phoneNumber"
@@ -11,14 +11,13 @@
                         @click="phoneNumber.value = ''"
                     />
                 </template>
-            </Field>
+            </van-field>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Field } from 'vant'
 
 const phoneNumber = ref('13233565586')
 

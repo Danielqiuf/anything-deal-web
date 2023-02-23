@@ -1,15 +1,14 @@
 <template>
-    <Overlay :show="value" @click="value = false">
+    <van-overlay :show="value" @click="value = false">
         <div :class="$style.alertContainer">
             <div :class="$style.alertBlock" @click.stop>
                 <slot></slot>
             </div>
             <img :class="$style.alertCloseImg" :src="require('@/assets/images/pop-close.png')" @click="value = false" />
         </div>
-    </Overlay>
+    </van-overlay>
 </template>
 <script setup>
-import { Overlay } from 'vant'
 import { computed } from 'vue'
 import utils from '@/utils'
 
