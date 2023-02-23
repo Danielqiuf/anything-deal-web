@@ -16,7 +16,7 @@
 > 🧑 作者(Author) DanielQiu 著作权所有，有问题可以多多交流。
 ### ✨ 项目优势
 - 已配置webpack打包`speed-measure-webpack-plugin`和压缩优化`compression-webpack-plugin`
-- 对打包后的产品已进行代码分割`code Spilitting`
+- 对打包后的代码进行了代码分割`code Spilitting`
 - 对于低版本手机或浏览器已加入`autoprefixer`和`babel/polyfill`插件进行兼容处理
 - 详细浏览器与前缀方案`browserslist`配置见`package.json`
 - 对vue3的使用有着更好的规范定义
@@ -169,3 +169,5 @@ yarn lint
 ### 📺 PS
 - 由于开发者使用的`IDE`都不大同，可能会导致eslint规范紊乱，所以每次运行项目的时候都会运行eslint fix修复功能进行修复，更好维护代码的规范性。
 - 基于`cross-env`实现的环境变量管理，可在根目录的`.env`，`.env.development`和`.env.production`中进行环境配置。
+
+### 🥰 简介地持续更新ing...
