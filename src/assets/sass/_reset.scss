@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body, th, td, .p1, .p2 {
+  font-family: Arial;
+}
+
+div {
+  font-size: 100%;
+}
+
+body {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, "Microsoft YaHei", BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+  font-feature-settings: 'tnum';
+  font-variant: tabular-nums;
+  -webkit-font-feature-settings: "tumn";
+  line-height: 1;
+}
+a {
+  // text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+  -webkit-touch-callout: none
+}
+
+ody, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, figure, section, legend, textarea, p, blockquote, th, td, input, select, textarea, button { margin: 0; padding: 0 }
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {text-decoration: none}
+
+input[type=password],
+input[type=text],
+textarea {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fff
+}
+ul, ol { list-style: none; }
+:focus{ outline:none;}
+
+
+
+

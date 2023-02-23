@@ -1,0 +1,153 @@
+@mixin flex-layout($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin same-size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin mask($color) {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $color;
+}
+
+@mixin text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-single-center($type) {
+  position: absolute;
+
+  @if $type==horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $type==vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin absolute-multi-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin page-with-background($color) {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: $color;
+  overflow-y: scroll;
+}
+
+@mixin gradient-border-after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  border-radius: 26px;
+  background: linear-gradient(155deg, #b8ff00, #51e80c, #28cd05, #00ffd6);
+  z-index: -1;
+}
+
+@mixin height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin ellipsis-line($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin square($length) {
+  width: $length;
+  height: $length;
+}
+
+@mixin plus-symbol($color) {
+  &::after {
+    content: '';
+    width: 14px;
+    height: 2px;
+    background-color: $color;
+    @include absolute-center;
+  }
+
+  &::before {
+    content: '';
+    width: 2px;
+    height: 14px;
+    background-color: $color;
+    @include absolute-center;
+  }
+}
+
+@mixin x-padding-bottom($px: 1px) {
+  // 默认为0的话会失效
+  padding-bottom: $px;
+  padding-bottom: calc(#{$px / 2} + constant(safe-area-inset-bottom));
+  /* 兼容 iOS < 11.2 */
+  padding-bottom: calc(#{$px / 2} + env(safe-area-inset-bottom));
+  /* 兼容 iOS >= 11.2 */
+}
+
+@mixin android-text-hack {
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    margin-top: 1px;
+  }
+}
+
+@mixin thin-line ($size, $color, $direction: top) {
+  position: relative;
+  &:before {
+    content: '';
+    border-top-width: $size;
+    border-color: $color;
+    border-style: solid;
+    width: 100%;
+    position: absolute;
+    top: if($direction == top, 0, unset);
+    bottom: if($direction == bottom, 0, unset);
+    left: 0;
+    transform-origin: if($direction == top, 0 0, 100% 100%);
+    transform: scale(1, 0.1);
+  }
+}
